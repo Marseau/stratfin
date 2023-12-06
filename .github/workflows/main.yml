@@ -13,20 +13,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # Adicione os passos necessários para configurar o ambiente do seu projeto
-    # Por exemplo, instalar dependências do Flutter, configurar emuladores, etc.
-
     - name: Install Flutter
       run: |
         git clone https://github.com/flutter/flutter.git -b stable --depth 1 $HOME/flutter
         echo "$HOME/flutter/bin" >> $GITHUB_ENV
-        echo "FLUTTER_ROOT=$HOME/flutter" >> $GITHUB_ENV
 
     - name: Install dependencies
       run: flutter pub get
 
-    # Coloque aqui outros comandos necessários para preparar o ambiente de teste
-
-    # Aqui você executa os testes
     - name: Run tests
       run: flutter test
+
