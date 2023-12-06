@@ -1,0 +1,168 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /relacionamento/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /atividade/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /notificacao/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /opcoes_escolha/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Produto/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /convidados/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /cliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /cliente/{parent}/cliente_dependente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_dependente/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_vinculoprofissional/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_vinculoprofissional/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_seguro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_seguro/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_ativo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_ativo/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_passivo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_passivo/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_cenarios/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_cenarios/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_projetofuturo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_projetofuturo/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_ativo_nao_financeiro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_ativo_nao_financeiro/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_ativo_financeiro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_ativo_financeiro/{document} {
+      allow read: if true;
+    }
+
+  }
+}

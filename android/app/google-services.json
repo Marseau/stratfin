@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "473172521347",
+    "firebase_url": "https://stratfin-393617-default-rtdb.firebaseio.com",
+    "project_id": "stratfin-393617",
+    "storage_bucket": "stratfin-393617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473172521347:android:32d4333dea5906651386b6",
+        "android_client_info": {
+          "package_name": "com.mycompany.stratfin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473172521347-bfr7gjtsnf2c25age0phi54f4tpgtjip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.stratfin",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "473172521347-0dgcnr8bt3onp800lcbu3cqcsjs8vs7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCydIlRbWQ6X0cnM4KxXsOHz_h4gcW-oLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473172521347-0dgcnr8bt3onp800lcbu3cqcsjs8vs7r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "473172521347-pklb65cfqmfdjtaqvhhnrhb1v82bb6uk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.stratfin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
