@@ -17,10 +17,12 @@ jobs:
       run: |
         git clone https://github.com/flutter/flutter.git -b stable --depth 1 $HOME/flutter
         echo "$HOME/flutter/bin" >> $GITHUB_ENV
+        echo "FLUTTER_ROOT=$HOME/flutter" >> $GITHUB_ENV
 
     - name: Install dependencies
       run: flutter pub get
 
     - name: Run tests
       run: flutter test
+
 
