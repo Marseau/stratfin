@@ -81,138 +81,141 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/',
           builder: (context, _) =>
               appStateNotifier.loggedIn ? const LogOutWidget() : const HomePageWidget(),
+          routes: [
+            FFRoute(
+              name: 'HomePage',
+              path: 'homePage',
+              builder: (context, params) => const HomePageWidget(),
+            ),
+            FFRoute(
+              name: 'TestesEmpresa',
+              path: 'testesEmpresa',
+              builder: (context, params) => const TestesEmpresaWidget(),
+            ),
+            FFRoute(
+              name: 'Base',
+              path: 'base',
+              builder: (context, params) => const BaseWidget(),
+            ),
+            FFRoute(
+              name: 'Esqueceusenhaempresa',
+              path: 'esqueceusenhaempresa',
+              builder: (context, params) => EsqueceusenhaempresaWidget(
+                emailusuario: params.getParam('emailusuario', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'UserProfile',
+              path: 'userProfile',
+              builder: (context, params) => UserProfileWidget(
+                cpf: params.getParam('cpf', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Base1',
+              path: 'base1',
+              builder: (context, params) => const Base1Widget(),
+            ),
+            FFRoute(
+              name: 'RecuperarSenha',
+              path: 'recuperarSenha',
+              builder: (context, params) => RecuperarSenhaWidget(
+                email: params.getParam('email', ParamType.String),
+                cnpj: params.getParam('cnpj', ParamType.String),
+                cpf: params.getParam('cpf', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Base1Copy',
+              path: 'base1Copy',
+              builder: (context, params) => const Base1CopyWidget(),
+            ),
+            FFRoute(
+              name: 'Empresa',
+              path: 'empresa',
+              builder: (context, params) => const EmpresaWidget(),
+            ),
+            FFRoute(
+              name: 'Consultor',
+              path: 'consultor',
+              builder: (context, params) => const ConsultorWidget(),
+            ),
+            FFRoute(
+              name: 'Dashboard',
+              path: 'dashboard',
+              requireAuth: true,
+              builder: (context, params) => DashboardWidget(
+                refUserEmpresa: params.getParam('refUserEmpresa',
+                    ParamType.DocumentReference, false, ['users']),
+              ),
+            ),
+            FFRoute(
+              name: 'List06UserSearch',
+              path: 'list06UserSearch',
+              builder: (context, params) => const List06UserSearchWidget(),
+            ),
+            FFRoute(
+              name: 'UserProfileCopy',
+              path: 'userProfileCopy',
+              builder: (context, params) => UserProfileCopyWidget(
+                cpf: params.getParam('cpf', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Login',
+              path: 'login',
+              builder: (context, params) => const LoginWidget(),
+            ),
+            FFRoute(
+              name: 'LoginConvidado',
+              path: 'loginConvidado',
+              builder: (context, params) => LoginConvidadoWidget(
+                docReference: params.getParam('docReference',
+                    ParamType.DocumentReference, false, ['convidados']),
+              ),
+            ),
+            FFRoute(
+              name: 'LogOut',
+              path: 'logOut',
+              builder: (context, params) => const LogOutWidget(),
+            ),
+            FFRoute(
+              name: 'UserProfileCopy2',
+              path: 'Cenarios',
+              builder: (context, params) => UserProfileCopy2Widget(
+                cpf: params.getParam('cpf', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Cenarios',
+              path: 'cenarios',
+              builder: (context, params) => const CenariosWidget(),
+            ),
+            FFRoute(
+              name: 'DashboardCliente',
+              path: 'dashboardCliente',
+              requireAuth: true,
+              builder: (context, params) => DashboardClienteWidget(
+                refUserAdvisor:
+                    params.getParam('refUserAdvisor', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'TestesUsuario',
+              path: 'testesUsuario',
+              builder: (context, params) => const TestesUsuarioWidget(),
+            ),
+            FFRoute(
+              name: 'DashboardAdvisor',
+              path: 'dashboardAdvisor',
+              requireAuth: true,
+              builder: (context, params) => DashboardAdvisorWidget(
+                refUserEmpresa: params.getParam('refUserEmpresa',
+                    ParamType.DocumentReference, false, ['users']),
+              ),
+            )
+          ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
-        FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
-        ),
-        FFRoute(
-          name: 'TestesEmpresa',
-          path: '/testesEmpresa',
-          builder: (context, params) => const TestesEmpresaWidget(),
-        ),
-        FFRoute(
-          name: 'Base',
-          path: '/base',
-          builder: (context, params) => const BaseWidget(),
-        ),
-        FFRoute(
-          name: 'Esqueceusenhaempresa',
-          path: '/esqueceusenhaempresa',
-          builder: (context, params) => EsqueceusenhaempresaWidget(
-            emailusuario: params.getParam('emailusuario', ParamType.String),
-          ),
-        ),
-        FFRoute(
-          name: 'UserProfile',
-          path: '/userProfile',
-          builder: (context, params) => UserProfileWidget(
-            cpf: params.getParam('cpf', ParamType.String),
-          ),
-        ),
-        FFRoute(
-          name: 'Base1',
-          path: '/base1',
-          builder: (context, params) => const Base1Widget(),
-        ),
-        FFRoute(
-          name: 'RecuperarSenha',
-          path: '/recuperarSenha',
-          builder: (context, params) => RecuperarSenhaWidget(
-            email: params.getParam('email', ParamType.String),
-            cnpj: params.getParam('cnpj', ParamType.String),
-            cpf: params.getParam('cpf', ParamType.String),
-          ),
-        ),
-        FFRoute(
-          name: 'Base1Copy',
-          path: '/base1Copy',
-          builder: (context, params) => const Base1CopyWidget(),
-        ),
-        FFRoute(
-          name: 'Empresa',
-          path: '/empresa',
-          builder: (context, params) => const EmpresaWidget(),
-        ),
-        FFRoute(
-          name: 'Consultor',
-          path: '/consultor',
-          builder: (context, params) => const ConsultorWidget(),
-        ),
-        FFRoute(
-          name: 'Dashboard',
-          path: '/dashboard',
-          requireAuth: true,
-          builder: (context, params) => DashboardWidget(
-            refUserEmpresa: params.getParam('refUserEmpresa',
-                ParamType.DocumentReference, false, ['users']),
-          ),
-        ),
-        FFRoute(
-          name: 'List06UserSearch',
-          path: '/list06UserSearch',
-          builder: (context, params) => const List06UserSearchWidget(),
-        ),
-        FFRoute(
-          name: 'UserProfileCopy',
-          path: '/userProfileCopy',
-          builder: (context, params) => UserProfileCopyWidget(
-            cpf: params.getParam('cpf', ParamType.String),
-          ),
-        ),
-        FFRoute(
-          name: 'Login',
-          path: '/login',
-          builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'LoginConvidado',
-          path: '/loginConvidado',
-          builder: (context, params) => LoginConvidadoWidget(
-            docReference: params.getParam('docReference',
-                ParamType.DocumentReference, false, ['convidados']),
-          ),
-        ),
-        FFRoute(
-          name: 'LogOut',
-          path: '/logOut',
-          builder: (context, params) => const LogOutWidget(),
-        ),
-        FFRoute(
-          name: 'UserProfileCopy2',
-          path: '/Cenarios',
-          builder: (context, params) => UserProfileCopy2Widget(
-            cpf: params.getParam('cpf', ParamType.String),
-          ),
-        ),
-        FFRoute(
-          name: 'Cenarios',
-          path: '/cenarios',
-          builder: (context, params) => const CenariosWidget(),
-        ),
-        FFRoute(
-          name: 'DashboardCliente',
-          path: '/dashboardCliente',
-          requireAuth: true,
-          builder: (context, params) => DashboardClienteWidget(
-            refUserAdvisor: params.getParam('refUserAdvisor', ParamType.String),
-          ),
-        ),
-        FFRoute(
-          name: 'TestesUsuario',
-          path: '/testesUsuario',
-          builder: (context, params) => const TestesUsuarioWidget(),
-        ),
-        FFRoute(
-          name: 'DashboardAdvisor',
-          path: '/dashboardAdvisor',
-          requireAuth: true,
-          builder: (context, params) => DashboardAdvisorWidget(
-            refUserEmpresa: params.getParam('refUserEmpresa',
-                ParamType.DocumentReference, false, ['users']),
-          ),
-        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
