@@ -1,0 +1,887 @@
+[
+  {
+    "id": "0uYnL5GuOveNwcTS4OWgHAQihYe2",
+    "uid": "0uYnL5GuOveNwcTS4OWgHAQihYe2",
+    "created_time": {
+      "_seconds": 1707092392,
+      "_nanoseconds": 163000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "email": "a@gmail.com",
+    "cpf_cnpj": "488.612.380-50",
+    "usuario_tipo": "Usuário",
+    "nome_responsavel": "",
+    "bio": "Boa gente, um pacificador. Muito experiente!",
+    "phone_number": "+55 (11) 9458-7546",
+    "apelido": "Toninho das Galegas",
+    "display_name": "Antonio Netto",
+    "autoPerfilAdvisor": "Total",
+    "autoCenarioAdvisor": "Total",
+    "notificacao": true,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2F0uYnL5GuOveNwcTS4OWgHAQihYe2%2Fuploads%2F1727548797925000.jpeg?alt=media&token=2b0c4454-41b0-4a65-8de6-43cde7ae7aaa",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "1ez8BG6YTANvvBEWBlIeCsuof8w1"
+        ]
+      },
+      "_converter": {}
+    },
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "numeroAcessos": 117
+  },
+  {
+    "id": "1ez8BG6YTANvvBEWBlIeCsuof8w1",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "1ez8BG6YTANvvBEWBlIeCsuof8w1",
+    "created_time": {
+      "_seconds": 1706387890,
+      "_nanoseconds": 620000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "display_name": "Ziraldo de Carvalho",
+    "email": "z@gmail.com",
+    "cpf_cnpj": "484.881.020-54",
+    "usuario_tipo": "Advisor",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "notificacao": true,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2F1ez8BG6YTANvvBEWBlIeCsuof8w1%2Fuploads%2F1727893852086000.jpg?alt=media&token=5c2cfcfd-27c2-4736-ad06-7f3a21fc2cb1",
+    "user_vinculado": [
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "0uYnL5GuOveNwcTS4OWgHAQihYe2"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "a0NWZUSVXUWyymJJKIbaipGooRc2"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "xGAXELYfWYN32OwwYM3NAWr8BxX2"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "rflha89VtDZRKHAGKNvNdm9kGyw1"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "TFPAvosXdgcIB2cIjeiNVcFsZzz2"
+          ]
+        },
+        "_converter": {}
+      }
+    ],
+    "phone_number": "",
+    "numeroAcessos": 101
+  },
+  {
+    "id": "839DdpdM8CQEa1WESAh7VzXM5Vm2",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "wqKMOguF43WC1MTP4oygv439ZZF3"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "839DdpdM8CQEa1WESAh7VzXM5Vm2",
+    "created_time": {
+      "_seconds": 1727655045,
+      "_nanoseconds": 264000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "user_vinculado": null,
+    "display_name": "Marseau Franco",
+    "email": "marseaufranco@gmail.com",
+    "cpf_cnpj": "035.120.818-60",
+    "usuario_tipo": "Usuário",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2F839DdpdM8CQEa1WESAh7VzXM5Vm2%2Fuploads%2F1727655211051000.jpg?alt=media&token=1685028e-f88c-42e2-82c3-e71ecc2b2365",
+    "apelido": "Kaka",
+    "phone_number": "+55(11) 99954-2584",
+    "notificacao": true,
+    "autoPerfilAdvisor": "Total",
+    "autoCenarioAdvisor": "Total",
+    "numeroAcessos": 29
+  },
+  {
+    "id": "E0Ye5LFCCOaL0qd4fg5LmTxB5kn2",
+    "uid": "E0Ye5LFCCOaL0qd4fg5LmTxB5kn2",
+    "email": "lilianaspadoni07@gmail.com",
+    "created_time": {
+      "_seconds": 1727977749,
+      "_nanoseconds": 625000000
+    },
+    "ativo": true,
+    "perfil_empresa": true,
+    "user_tipo": "",
+    "notificacao": true,
+    "display_name": "liliana spadoni",
+    "apelido": "ciça",
+    "phone_number": "+55(16) 99770-0778",
+    "photo_url": "",
+    "bio": "\n",
+    "numeroAcessos": 2,
+    "usuario_tipo": "Usuário"
+  },
+  {
+    "id": "K79DKBo7p7X5YYvwaSZm43lzBQx1",
+    "email": "aa@gmail.com",
+    "created_time": {
+      "_seconds": 1698180585,
+      "_nanoseconds": 186000000
+    },
+    "ativo": true,
+    "user_tipo": "Empresa",
+    "cpf_cnpj": "07.620.441/0001-35",
+    "usuario_tipo": "Empresa",
+    "bio": "O rei do Pix",
+    "nome_responsavel": "Paulo o chefão",
+    "apelido": "Pix do Paulo",
+    "phone_number": "+55 (11) 3742-1363",
+    "display_name": "Pix Processing Industries",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "K79DKBo7p7X5YYvwaSZm43lzBQx1",
+    "perfil_empresa": true,
+    "instituicaoColigada": "BTG Pactual",
+    "estadoFederacao": "DF",
+    "notificacao": true,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2FK79DKBo7p7X5YYvwaSZm43lzBQx1%2Fuploads%2F1727548930142000.jpeg?alt=media&token=fa0573a6-fdd7-49c4-aadd-795b26f5921e",
+    "user_vinculado": [
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "1ez8BG6YTANvvBEWBlIeCsuof8w1"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "fhjCwgsPuQM48Y0Dbzbd08zuuxD2"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "rxzs4ZXUKCMvLE6FoIW7wiqfFD43"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "hRhELk77cugmaoPvbO81xdP4zc02"
+          ]
+        },
+        "_converter": {}
+      },
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "wqKMOguF43WC1MTP4oygv439ZZF3"
+          ]
+        },
+        "_converter": {}
+      }
+    ],
+    "numeroAcessos": 17
+  },
+  {
+    "id": "NPVzjvYZ5XObjHWu2g1pXwmEmp83",
+    "uid": "NPVzjvYZ5XObjHWu2g1pXwmEmp83",
+    "created_time": {
+      "_seconds": 1705963341,
+      "_nanoseconds": 871000000
+    },
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "display_name": "Daniel de Oliveira Silva",
+    "email": "d@gmail.com",
+    "cpf_cnpj": "040.226.340-57",
+    "usuario_tipo": "Usuário",
+    "nome_responsavel": "",
+    "apelido": "Dani",
+    "bio": "sempre muito independente\n",
+    "phone_number": "+55 (11) 9845-7895",
+    "perfil_empresa": true,
+    "autoPerfilAdvisor": "Nenhum",
+    "autoCenarioAdvisor": "Parcial",
+    "notificacao": true,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2FNPVzjvYZ5XObjHWu2g1pXwmEmp83%2Fuploads%2F1727655701306000.jpg?alt=media&token=973e29ac-393a-4107-b883-2af7f23e661d",
+    "numeroAcessos": 6
+  },
+  {
+    "id": "TFPAvosXdgcIB2cIjeiNVcFsZzz2",
+    "uid": "TFPAvosXdgcIB2cIjeiNVcFsZzz2",
+    "email": "u@gmail.com",
+    "created_time": {
+      "_seconds": 1732403307,
+      "_nanoseconds": 245000000
+    },
+    "display_name": "Urania da Silva",
+    "perfil_empresa": true,
+    "ativo": true,
+    "cpf_cnpj": "",
+    "usuario_tipo": "Usuário",
+    "user_tipo": "Usuário",
+    "user_vinculado": null,
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "1ez8BG6YTANvvBEWBlIeCsuof8w1"
+        ]
+      },
+      "_converter": {}
+    },
+    "autoCenarioAdvisor": "Total",
+    "autoPerfilAdvisor": "Total",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2FTFPAvosXdgcIB2cIjeiNVcFsZzz2%2Fuploads%2F1732405907778000.jpeg?alt=media&token=1335ec05-8951-487e-8729-f2d65f8f345f",
+    "numeroAcessos": 24
+  },
+  {
+    "id": "YTTHh6a98BSmc1w1pKZVBlvWfu93",
+    "uid": "YTTHh6a98BSmc1w1pKZVBlvWfu93",
+    "email": "rrr@gmail.com",
+    "created_time": {
+      "_seconds": 1727872682,
+      "_nanoseconds": 727000000
+    },
+    "ativo": true,
+    "user_tipo": "Empresa",
+    "numeroAcessos": 1,
+    "notificacao": true,
+    "cpf_cnpj": "13.790.732/0001-74",
+    "usuario_tipo": "Empresa",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "YTTHh6a98BSmc1w1pKZVBlvWfu93"
+        ]
+      },
+      "_converter": {}
+    },
+    "perfil_empresa": true,
+    "user_vinculado": [
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "ttaXXzoEXke2loKqHgof85ZX9703"
+          ]
+        },
+        "_converter": {}
+      }
+    ]
+  },
+  {
+    "id": "a0NWZUSVXUWyymJJKIbaipGooRc2",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "1ez8BG6YTANvvBEWBlIeCsuof8w1"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "a0NWZUSVXUWyymJJKIbaipGooRc2",
+    "created_time": {
+      "_seconds": 1727983015,
+      "_nanoseconds": 745000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "user_vinculado": null,
+    "display_name": "Mario de Andrade",
+    "email": "m@gmail.com",
+    "cpf_cnpj": "",
+    "usuario_tipo": "Usuário",
+    "autoCenarioAdvisor": "Total",
+    "autoPerfilAdvisor": "Total",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "notificacao": true,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2Fa0NWZUSVXUWyymJJKIbaipGooRc2%2Fuploads%2F1732277805256000.jpg?alt=media&token=1f80a32c-ecec-4cb1-9522-20b177555d57",
+    "numeroAcessos": 26
+  },
+  {
+    "id": "fAlAiBfDeefjAe1aOzZHtlGQN662",
+    "uid": "fAlAiBfDeefjAe1aOzZHtlGQN662",
+    "email": "ee@gmail.com",
+    "created_time": {
+      "_seconds": 1728500435,
+      "_nanoseconds": 998000000
+    },
+    "ativo": true,
+    "user_tipo": "Empresa",
+    "numeroAcessos": 1,
+    "notificacao": true,
+    "cpf_cnpj": "02.984.272/0001-07",
+    "usuario_tipo": "Empresa",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "fAlAiBfDeefjAe1aOzZHtlGQN662"
+        ]
+      },
+      "_converter": {}
+    },
+    "perfil_empresa": true,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2FfAlAiBfDeefjAe1aOzZHtlGQN662%2Fuploads%2F1728500537026000.png?alt=media&token=3cb4087b-33d4-4caa-9c59-82374e315845",
+    "display_name": "Elefont Associates Inc.",
+    "apelido": "Elefont",
+    "phone_number": "+55(11) 99999-5252",
+    "nome_responsavel": "Elefont da Silva",
+    "instituicaoColigada": "Independente",
+    "estadoFederacao": "SP",
+    "bio": "Uma empresa de peso\n",
+    "user_vinculado": [
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "j9IbA1D0HaV2ogliWcFwJcM9c2e2"
+          ]
+        },
+        "_converter": {}
+      }
+    ]
+  },
+  {
+    "id": "fhjCwgsPuQM48Y0Dbzbd08zuuxD2",
+    "uid": "fhjCwgsPuQM48Y0Dbzbd08zuuxD2",
+    "email": "b@gmail.com",
+    "created_time": {
+      "_seconds": 1706390197,
+      "_nanoseconds": 38000000
+    },
+    "ativo": true,
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "perfil_empresa": true,
+    "user_tipo": "Usuário",
+    "display_name": "Beatriz Penazzo",
+    "cpf_cnpj": "686.271.410-45",
+    "usuario_tipo": "Administrativo",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "nome_responsavel": "",
+    "apelido": "Bia",
+    "bio": "è quem resolve a burocracia",
+    "phone_number": "+55 (00) 9845-7524",
+    "notificacao": true,
+    "numeroAcessos": 2
+  },
+  {
+    "id": "hRhELk77cugmaoPvbO81xdP4zc02",
+    "uid": "hRhELk77cugmaoPvbO81xdP4zc02",
+    "email": "c@gmail.com",
+    "created_time": {
+      "_seconds": 1706395793,
+      "_nanoseconds": 300000000
+    },
+    "ativo": true,
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "perfil_empresa": true,
+    "user_tipo": "Usuário",
+    "display_name": "Conego Lima",
+    "cpf_cnpj": "491.717.440-61",
+    "usuario_tipo": "Principal",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "nome_responsavel": "",
+    "apelido": "Liminha",
+    "bio": "O Chefe",
+    "phone_number": "+55 (11) 9954-0785",
+    "notificacao": true,
+    "numeroAcessos": 1
+  },
+  {
+    "id": "j9IbA1D0HaV2ogliWcFwJcM9c2e2",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "fAlAiBfDeefjAe1aOzZHtlGQN662"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "j9IbA1D0HaV2ogliWcFwJcM9c2e2",
+    "created_time": {
+      "_seconds": 1728500786,
+      "_nanoseconds": 387000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "user_vinculado": null,
+    "display_name": "Eduardo Gomes",
+    "email": "e@gmail.com",
+    "cpf_cnpj": "795.649.950-00",
+    "usuario_tipo": "Advisor",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "fAlAiBfDeefjAe1aOzZHtlGQN662"
+        ]
+      },
+      "_converter": {}
+    },
+    "numeroAcessos": 2,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2Fj9IbA1D0HaV2ogliWcFwJcM9c2e2%2Fuploads%2F1728500870699000.jpg?alt=media&token=572d2773-9794-47ab-aaeb-b917ec4ccfcf",
+    "apelido": "Edu",
+    "phone_number": "+55(11) 99995-5252",
+    "notificacao": true
+  },
+  {
+    "id": "lJVX8tIQOheyz8KazQMlqAqIayy2",
+    "uid": "lJVX8tIQOheyz8KazQMlqAqIayy2",
+    "email": "t@gmail.com",
+    "created_time": {
+      "_seconds": 1727729097,
+      "_nanoseconds": 106000000
+    },
+    "ativo": true,
+    "perfil_empresa": true,
+    "user_tipo": "Usuário",
+    "notificacao": true,
+    "usuario_tipo": "Usuário",
+    "display_name": "Tadeu Martins",
+    "phone_number": "+55(21) 99874-5665",
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2FlJVX8tIQOheyz8KazQMlqAqIayy2%2Fuploads%2F1732277922933000.jpg?alt=media&token=1dbc8e62-b105-494a-bd6f-39288f7b8640",
+    "numeroAcessos": 4
+  },
+  {
+    "id": "m91aGgnLlYahtfXGZpLMRcFOaMI3",
+    "uid": "m91aGgnLlYahtfXGZpLMRcFOaMI3",
+    "email": "r@gmail.com",
+    "created_time": {
+      "_seconds": 1727786973,
+      "_nanoseconds": 199000000
+    },
+    "ativo": true,
+    "perfil_empresa": true,
+    "user_tipo": "Usuário",
+    "notificacao": true,
+    "usuario_tipo": "Usuário",
+    "display_name": "Rodrigo da Silveira",
+    "phone_number": "+55(11) 99999-9999",
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2Fm91aGgnLlYahtfXGZpLMRcFOaMI3%2Fuploads%2F1727831304538000.jpg?alt=media&token=150ace9b-961b-45f9-b2df-53946e6a7084",
+    "numeroAcessos": 23
+  },
+  {
+    "id": "rflha89VtDZRKHAGKNvNdm9kGyw1",
+    "uid": "rflha89VtDZRKHAGKNvNdm9kGyw1",
+    "email": "j@gmail.com",
+    "created_time": {
+      "_seconds": 1730147266,
+      "_nanoseconds": 11000000
+    },
+    "display_name": "José da Silva",
+    "perfil_empresa": true,
+    "ativo": true,
+    "cpf_cnpj": "",
+    "usuario_tipo": "Usuário",
+    "user_tipo": "Usuário",
+    "user_vinculado": null,
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "1ez8BG6YTANvvBEWBlIeCsuof8w1"
+        ]
+      },
+      "_converter": {}
+    },
+    "autoCenarioAdvisor": "Total",
+    "autoPerfilAdvisor": "Total",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "numeroAcessos": 5,
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2Frflha89VtDZRKHAGKNvNdm9kGyw1%2Fuploads%2F1732278021263000.jpeg?alt=media&token=6672bf21-5103-4251-bd8d-b99c4e1055af"
+  },
+  {
+    "id": "rxzs4ZXUKCMvLE6FoIW7wiqfFD43",
+    "uid": "rxzs4ZXUKCMvLE6FoIW7wiqfFD43",
+    "email": "g@gmail.com",
+    "created_time": {
+      "_seconds": 1706391865,
+      "_nanoseconds": 649000000
+    },
+    "ativo": true,
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "perfil_empresa": true,
+    "user_tipo": "Usuário",
+    "display_name": "Geraldo de Oliveira",
+    "cpf_cnpj": "816.100.000-09",
+    "usuario_tipo": "Administrativo",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "nome_responsavel": "",
+    "apelido": "Canhoto",
+    "bio": "Joga muito futebol. Mas também é só isto!",
+    "phone_number": "+55 (11) 9856-7547",
+    "notificacao": true,
+    "numeroAcessos": 1
+  },
+  {
+    "id": "wqKMOguF43WC1MTP4oygv439ZZF3",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "wqKMOguF43WC1MTP4oygv439ZZF3",
+    "created_time": {
+      "_seconds": 1727654742,
+      "_nanoseconds": 315000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "display_name": "Helena Inspiradora",
+    "email": "h@gmail.com",
+    "cpf_cnpj": "952.581.990-61",
+    "usuario_tipo": "Advisor",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/stratfin-393617.appspot.com/o/users%2FwqKMOguF43WC1MTP4oygv439ZZF3%2Fuploads%2F1727654899877000.jpeg?alt=media&token=7eb459ba-6512-40b6-ab83-0287b5a7fc4e",
+    "apelido": "Inspira",
+    "bio": "Muito inteligente",
+    "notificacao": true,
+    "user_vinculado": [
+      {
+        "_firestore": {
+          "projectId": "stratfin-393617"
+        },
+        "_path": {
+          "segments": [
+            "users",
+            "839DdpdM8CQEa1WESAh7VzXM5Vm2"
+          ]
+        },
+        "_converter": {}
+      }
+    ],
+    "numeroAcessos": 7,
+    "phone_number": ""
+  },
+  {
+    "id": "xGAXELYfWYN32OwwYM3NAWr8BxX2",
+    "user_vinculante": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "1ez8BG6YTANvvBEWBlIeCsuof8w1"
+        ]
+      },
+      "_converter": {}
+    },
+    "uid": "xGAXELYfWYN32OwwYM3NAWr8BxX2",
+    "created_time": {
+      "_seconds": 1728223392,
+      "_nanoseconds": 532000000
+    },
+    "perfil_empresa": true,
+    "ativo": true,
+    "user_tipo": "Usuário",
+    "user_vinculado": null,
+    "display_name": "Rafael",
+    "email": "Rafael@gmail.com",
+    "cpf_cnpj": "",
+    "usuario_tipo": "Usuário",
+    "autoCenarioAdvisor": "Total",
+    "autoPerfilAdvisor": "Total",
+    "empresa": {
+      "_firestore": {
+        "projectId": "stratfin-393617"
+      },
+      "_path": {
+        "segments": [
+          "users",
+          "K79DKBo7p7X5YYvwaSZm43lzBQx1"
+        ]
+      },
+      "_converter": {}
+    },
+    "numeroAcessos": 3
+  }
+]
