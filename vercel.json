@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "name": "stratfin",
+  "framework": null,
+  "buildCommand": "cd strat_fin && flutter build web --release",
+  "outputDirectory": "strat_fin/build/web",
+  "installCommand": "curl -fsSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.16.3-stable.tar.xz | tar -xJ && export PATH=\"$PWD/flutter/bin:$PATH\" && flutter --version && flutter config --enable-web",
+  "devCommand": null,
+  "public": false,
+  "env": {
+    "FLUTTER_ROOT": "./flutter",
+    "PATH": "./flutter/bin:$PATH"
+  },
+  "github": {
+    "autoAlias": false,
+    "enabled": true
+  },
+  "regions": ["iad1"],
+  "functions": {
+    "strat_fin/build/web/**": {
+      "runtime": "@vercel/static"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        }
+      ]
+    }
+  ]
+}
