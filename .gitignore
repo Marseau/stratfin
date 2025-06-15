@@ -1,0 +1,137 @@
+# ================================
+# SENSITIVE FILES & CREDENTIALS
+# ================================
+# Firebase Service Account Keys
+*firebase-adminsdk*.json
+*KeyAPIFlutterflow*.json
+serviceAccountKey.json
+google-services.json
+GoogleService-Info.plist
+stratfin-*.json
+
+# API Keys and Secrets
+*.key
+*.pem
+*Key*.txt
+RECOVERY-CODES-*.txt
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# ================================
+# BUILD OUTPUTS & DEPENDENCIES
+# ================================
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+env/
+env_*/
+ENV/
+env.bak/
+venv.bak/
+
+# Flutter
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+**/android/local.properties
+**/android/key.properties
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/build/
+**/.dart_tool/
+**/.packages
+**/pubspec.lock
+
+# ================================
+# DEVELOPMENT & TOOLS
+# ================================
+# Firebase
+.firebase/
+firebase-debug.log*
+firebase-debug.*.log*
+ui-debug.log
+database-debug.log
+firestore-debug.log
+
+# Logs
+logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ================================
+# PROJECT SPECIFIC
+# ================================
+# Temporary files
+*.tmp
+*.temp
+last_run_date.txt
+test_*.json
+datasets_*.csv
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Generated JavaScript files
+excel-win32-*.js
+index_*.js
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock

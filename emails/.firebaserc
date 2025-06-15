@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "stratfin-393617"
+  },
+  "targets": {},
+  "etags": {
+    "stratfin-393617": {
+      "extensionInstances": {
+        "firestore-algolia-search": "91d4c494970500a83b7a6e9531bafba04bf559284a1927333eebf1e8a7341c3d"
+      }
+    }
+  },
+  "dataconnectEmulatorConfig": {}
+}

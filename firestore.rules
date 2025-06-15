@@ -1,0 +1,535 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /leadsAgente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+		match /users/{userId} {
+      allow read: if request.auth != null;
+    }
+    match /notificacao/{notificacaoId} {
+      allow create,delete,read, write: if true;
+    }
+    match /cliente/{parent}/cliente_conta_emergencia/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_conta_emergencia/{document} {
+      allow read: if true;
+    }
+
+
+    match /Mensagens/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Chats/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /chat_mensagens/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /cliente/{parent}/cliente_ativo_financeiro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_ativo_financeiro/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_ativo_nao_financeiro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_ativo_nao_financeiro/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_projetofuturo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_projetofuturo/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /cliente/{parent}/cliente_ativo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_ativo/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_cenarios/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_cenarios/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_dependente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_dependente/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_passivo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_passivo/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_seguro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_seguro/{document} {
+      allow read: if true;
+    }
+
+
+    match /cliente/{parent}/cliente_vinculoprofissional/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cliente_vinculoprofissional/{document} {
+      allow read: if true;
+    }
+
+
+    match /convidados/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Cliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if false;
+    }
+
+    match /Cliente/{parent}/cenarioCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/cenarioCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /Cliente/{parent}/dependenteCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/dependenteCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /Cliente/{parent}/estadocivilCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/estadocivilCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /Cliente/{parent}/financeiro_patrimonial_ativoCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/financeiro_patrimonial_ativoCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /Cliente/{parent}/financeiro_patrimonial_passivoCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/financeiro_patrimonial_passivoCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /Cliente/{parent}/seguroCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/seguroCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /Cliente/{parent}/vinculoprofissionalCliente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/vinculoprofissionalCliente/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/cenario/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/cenario/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/dependente/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/dependente/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/estadocivil/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/estadocivil/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/financeiro_patrimonial_ativo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/financeiro_patrimonial_ativo/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/financeiro_patrimonial_passivos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/financeiro_patrimonial_passivos/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/projetosvida/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/projetosvida/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{parent}/seguro/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/seguro/{document} {
+      allow read: if true;
+    }
+
+
+    match /usuario/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /usuario/{parent}/vinculoprofissional/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/vinculoprofissional/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/Cenarios/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /opcoes_escolha/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /users/{parent}/projetos_vida/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /atividade/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /users/{parent}/dependentes/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/estado_civil/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/financeiro_patrimonial_passivo/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/financeiros_patrimonial_ativos/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /notificacao/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /opacao_padrao/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/produto/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if request.auth.uid == parent;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /relacionamento/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /users/{parent}/seguros/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/vinculo_profissional/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /Variaveis/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Variaveis/{parent}/dependentes/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Variaveis/{parent}/estadocivil/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Consultor/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Produto/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /Suitability/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /empresa/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /users/{parent}/simulacao/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if request.auth.uid == parent;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if request.auth.token.email.matches("firebase@flutterflow.io");
+    }
+
+    match /users/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

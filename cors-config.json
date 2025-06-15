@@ -1,0 +1,8 @@
+[
+    {
+        "origin": ["https://stratfin.tec.br","https://stratfin.flutterflow.app"],
+        "method": ["GET", "POST", "PUT", "HEAD", "OPTIONS"],
+        "responseHeader": ["Content-Type"],
+        "maxAgeSeconds": 3600
+    }
+]

@@ -1,0 +1,540 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user_vinculante",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "usuario_tipo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "display_name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "convidados",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user_convite",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "usuario_tipo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nome_completo",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_financeiro",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "liquidez",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "riscos_associados",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "tipo_ativo",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "chat_mensagens",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ref_chat",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "empresa",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "display_name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_seguro",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tipo_seguro",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nome_seguradora",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_vinculoprofissional",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "vinculo_profissional",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "ocupacao",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_financeiro",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tipo_ativo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "descricao",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tipo_ativo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "descricao",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_passivo",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "passivo_tipo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "descriminacao",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_projetofuturo",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "descricao",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "objetivo",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_dependente",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "parentesco",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nome",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_dependente",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_passivo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_seguro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_projetofuturo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_dependente",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_seguro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_vinculoprofissional",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_passivo",
+      "fieldPath": "ativoNFinanceiroDoc",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_passivo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_projetofuturo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_dependente",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_passivo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_dependente",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_dependente",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_vinculoprofissional",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_passivo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_ativo_nao_financeiro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_seguro",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_projetofuturo",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cliente_cenarios",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
+}
