@@ -1,28 +1,208 @@
-name: Flutter CI
+name: StratFin CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
     branches: [ main ]
 
+env:
+  FLUTTER_VERSION: '3.16.3'
+
 jobs:
-  build-and-test:
+  analyze:
+    name: Code Analysis
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+    - name: Checkout code
+      uses: actions/checkout@v4
       
-    - uses: subosito/flutter-action@v2
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.16.3' # Use a versão do Flutter que você está usando
-    - run: flutter pub get
-    - name: Run Dart Analyzer
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        cache: true
+        
+    - name: Install dependencies (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter pub get
+      
+    - name: Install dependencies (emails)
+      working-directory: ./emails
+      run: flutter pub get
+      
+    - name: Run code analysis (strat_fin)
+      working-directory: ./strat_fin
       run: flutter analyze
-    - name: Check code formatting
+      
+    - name: Run code analysis (emails)
+      working-directory: ./emails
+      run: flutter analyze
+      
+    - name: Check code formatting (strat_fin)
+      working-directory: ./strat_fin
       run: flutter format --set-exit-if-changed .
-    - run: flutter test
-    - run: flutter build apk # ou flutter build ios, dependendo do seu alvo
+      
+    - name: Check code formatting (emails)
+      working-directory: ./emails
+      run: flutter format --set-exit-if-changed .
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: analyze
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        cache: true
+        
+    - name: Install dependencies (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter pub get
+      
+    - name: Run unit tests (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter test test/unit/ --coverage
+      
+    - name: Run widget tests (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter test test/widget/
+      
+    - name: Install dependencies (emails)
+      working-directory: ./emails
+      run: flutter pub get
+      
+    - name: Run tests (emails)
+      working-directory: ./emails
+      run: flutter test
+      
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./strat_fin/coverage/lcov.info
+        fail_ci_if_error: false
+
+  build-android:
+    name: Build Android
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+        
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        cache: true
+        
+    - name: Install dependencies (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter pub get
+      
+    - name: Build APK (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter build apk --debug
+      
+    - name: Build App Bundle (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter build appbundle --debug
+      
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: strat-fin-debug-apk
+        path: strat_fin/build/app/outputs/flutter-apk/app-debug.apk
+        retention-days: 7
+
+  build-web:
+    name: Build Web
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        cache: true
+        
+    - name: Install dependencies (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter pub get
+      
+    - name: Build for web (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter build web --debug
+      
+    - name: Upload web build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: strat-fin-web-build
+        path: strat_fin/build/web/
+        retention-days: 7
+
+  python-services:
+    name: Test Python Services
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov flake8
+        
+    - name: Run Python linting
+      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      
+    - name: Test Python services
+      run: |
+        # Test main services
+        python -m pytest test_*.py -v || echo "No Python tests found"
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'

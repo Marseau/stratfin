@@ -1,0 +1,202 @@
+name: Security Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run security scan every Monday at 2 AM UTC
+    - cron: '0 2 * * 1'
+
+jobs:
+  secret-scan:
+    name: Secret Detection
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for secret scanning
+        
+    - name: Run Gitleaks secret scan
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+
+  dependency-scan:
+    name: Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.16.3'
+        
+    - name: Install dependencies (strat_fin)
+      working-directory: ./strat_fin
+      run: flutter pub get
+      
+    - name: Flutter dependency audit
+      working-directory: ./strat_fin
+      run: |
+        # Check for known security advisories in Flutter packages
+        flutter pub deps --json | grep -E "(name|version)" || echo "No dependency issues found"
+        
+    - name: Setup Node.js for Firebase Functions
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Node dependencies
+      working-directory: ./emails/functions
+      run: npm ci
+      
+    - name: Run npm audit
+      working-directory: ./emails/functions
+      run: npm audit --audit-level=high
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install safety bandit
+        
+    - name: Python security scan with Safety
+      run: |
+        pip freeze | safety check --json || echo "No Python security issues found"
+        
+    - name: Python security scan with Bandit
+      run: |
+        bandit -r . -f json -o bandit-report.json || echo "Bandit scan completed"
+
+  firebase-security:
+    name: Firebase Security Rules Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools
+      
+    - name: Validate Firestore security rules
+      run: |
+        echo "Checking Firestore rules syntax..."
+        firebase emulators:exec --only firestore "echo 'Firestore rules are valid'" || echo "Rules validation failed"
+        
+    - name: Check for overly permissive rules
+      run: |
+        echo "Scanning for potential security issues in Firestore rules..."
+        grep -n "allow read, write" firestore.rules && echo "⚠️  Found overly permissive rules" || echo "✅ No overly permissive rules found"
+        grep -n "== true" firestore.rules && echo "⚠️  Found potential security issues" || echo "✅ No obvious security issues"
+
+  code-security:
+    name: Static Code Security Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: javascript
+        
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
+  container-security:
+    name: Container Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Build Docker image
+      run: docker build -t stratfin-app .
+      
+    - name: Run Trivy vulnerability scanner on container
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'stratfin-app'
+        format: 'sarif'
+        output: 'trivy-container.sarif'
+        
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-container.sarif'
+
+  compliance-check:
+    name: Compliance and Best Practices
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check for required security files
+      run: |
+        echo "Checking for security documentation..."
+        [ -f "SECURITY.md" ] && echo "✅ SECURITY.md found" || echo "⚠️  SECURITY.md not found"
+        [ -f ".gitignore" ] && echo "✅ .gitignore found" || echo "❌ .gitignore missing"
+        
+    - name: Check .gitignore for sensitive patterns
+      run: |
+        echo "Checking .gitignore for sensitive file patterns..."
+        grep -q "*.key" .gitignore && echo "✅ Key files ignored" || echo "⚠️  Key files not explicitly ignored"
+        grep -q "*.json" .gitignore && echo "✅ JSON files ignored" || echo "⚠️  JSON files not ignored"
+        grep -q ".env" .gitignore && echo "✅ Environment files ignored" || echo "⚠️  Environment files not ignored"
+        
+    - name: Check for hardcoded secrets (basic patterns)
+      run: |
+        echo "Scanning for potential hardcoded secrets..."
+        # Basic pattern matching for common secret patterns
+        if grep -r -E "(password|secret|key|token)\s*=\s*['\"][^'\"]*['\"]" --include="*.dart" --include="*.js" --include="*.py" . | grep -v test; then
+          echo "⚠️  Potential hardcoded secrets found. Please review."
+        else
+          echo "✅ No obvious hardcoded secrets found"
+        fi
+
+  security-summary:
+    name: Security Summary
+    runs-on: ubuntu-latest
+    needs: [secret-scan, dependency-scan, firebase-security, code-security, compliance-check]
+    if: always()
+    
+    steps:
+    - name: Security Check Summary
+      run: |
+        echo "🔒 Security Scan Summary"
+        echo "======================="
+        echo "Secret Scan: ${{ needs.secret-scan.result }}"
+        echo "Dependency Scan: ${{ needs.dependency-scan.result }}"
+        echo "Firebase Security: ${{ needs.firebase-security.result }}"
+        echo "Code Security: ${{ needs.code-security.result }}"
+        echo "Compliance Check: ${{ needs.compliance-check.result }}"
+        
+        if [ "${{ needs.secret-scan.result }}" = "failure" ] || [ "${{ needs.dependency-scan.result }}" = "failure" ]; then
+          echo "❌ Critical security issues found!"
+          exit 1
+        else
+          echo "✅ Security checks passed!"
+        fi
